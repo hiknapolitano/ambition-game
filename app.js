@@ -45,10 +45,7 @@ function gameOver(){
     gameIsOver = true;
     spawnParticles(100, player.position.x, player.position.y, player.color);
     localStorage.setItem("HighScore", Math.max(score, localStorage.getItem("HighScore")));
-    setTimeout(() => {
-        
-        gameOverScreen.classList.add("visible");
-    }, 800);
+    gameOverScreen.classList.add("visible");
     scoreFinal.textContent = `Score: ${score}`;
     highScoreFinal.textContent = `High Score: ${localStorage.getItem("HighScore")}`;
     score = -1;
@@ -193,13 +190,15 @@ var grid = {
 }
 function restartGame(){
     
-            if(!gameIsOver)
-            return;
+    
+    if(!gameIsOver)
+    return;
+    
+    gameOverScreen.classList.remove("visible");
     playSfx(replaySound, 1);
     particlesArray =[];
     paintedBoxesArray = [];
 
-    gameOverScreen.classList.remove("visible");
 
    // boxSize-=player.width*2;
  cvs.width = boxSize * multiplyFactor;
