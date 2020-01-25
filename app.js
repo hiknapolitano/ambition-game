@@ -74,9 +74,9 @@ function scoreNumberTextOnCanvasLifeCycle(){
 function paintBoxes(direction, x, y){
 
     if(direction == "horizontal")
-    var p = new paintedBoxes(0, y, boxSize, player.width, "rgba(40, 10, 20)");
+    var p = new paintedBoxes(0, y, boxSize, player.width, "rgba(40, 0, 10)");
     else if(direction == "vertical")
-    var p = new paintedBoxes(x, 0, player.width, boxSize, "rgba(40, 10, 20)");
+    var p = new paintedBoxes(x, 0, player.width, boxSize, "rgba(40, 0, 10)");
 }
 
 var paintedBoxesArray = [];
@@ -188,7 +188,7 @@ var player = {
 }
 
 var grid = {
-    color: "rgba(50,50,50,0.5)",
+    color: "rgba(30,30,30,1)",
     thickness: 1
 }
 function restartGame(){
@@ -594,7 +594,7 @@ ctx.imageSmoothingEnabled = false;
 ctx.clearRect(0,0,boxSize,boxSize);
     
 //draw background
-ctx.fillStyle = "rgb(20,20,20)";
+ctx.fillStyle = "rgb(5,5,5)";
 ctx.fillRect(0,0,boxSize,boxSize);
 
 
@@ -702,6 +702,7 @@ function setup(){
 var won = false;
 
 function youWon(){
+    localStorage.setItem("HighScore", 20);
     playSfx(wonSound, 1);
     won = true;
     cvs.classList.add("invisible");
