@@ -7,7 +7,6 @@ class particle {
 
     constructor(x, y, color, sizeFactor){
         this.x = x;
-        //console.log("this x = " + this.x)
         this.y = y;
         this.sizeFactor = sizeFactor || 1;
         this.size = randomRange(3, 10) * this.sizeFactor;
@@ -42,8 +41,6 @@ function updateParticles(){
     if(gameIsOver || particlesArray.length > 0){
         particlesArray.forEach(p => {
 
-            //console.log("updatin particles!");
-            //console.log("there are " + particlesArray.length + " particles")
             if(randomRange(0, 2) == 0)
             p.speedX *= -1;
             if(randomRange(0, 2) == 0)
@@ -62,11 +59,8 @@ function drawParticles(){
     if(gameIsOver || particlesArray.length > 0){
         particlesArray.forEach(p => {
             
-            //console.log("drawin particles!");
             ctx.fillStyle = p.color;
             ctx.fillRect(p.x, p.y, p.size, p.size);
-            //console.log(p.x, p.y, p.size);
-            //console.log("drew particle");
         });
     }
 }

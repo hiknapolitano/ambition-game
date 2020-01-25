@@ -3,7 +3,6 @@ const cvs = document.getElementById("cvs");
 const ctx = cvs.getContext("2d");
 const scoreFinal = document.getElementById("score-final");
 const highScoreFinal = document.getElementById("high-score-final");
-//const playerImg = document.getElementById("player-img");
 const gameOverScreen = document.getElementById("game-over-screen");
 document.addEventListener("keydown", handleKeyDown);
 var loadingScreen = document.getElementById("loading");
@@ -225,16 +224,6 @@ function handleKeyDown(e, fake){
 
     if(e.repeat){return;}
 
-    //console.log(e.keyCode);
-
-//     function clearLastKeys(){
-//     spawnParticles(2, player.position.x, player.position.y, player.color, 0.5);
-//     // var keyCode = e.keyCode;
-//     // if(keyCode >= 37 && keyCode <= 40){
-//     //     if(moveInterval != null)
-//     //     clearInterval(moveInterval);
-//     // }
-// }
 
     switch(e.keyCode){
 
@@ -244,12 +233,7 @@ function handleKeyDown(e, fake){
             }
             targetPos.y = closestBox(player.position.y);
             currentDirection = "left";
-            //player.position.y = targetPos.y;
-            // clearLastKeys();
-            //changeTargetPos(-1, 0);
-            // moveInterval = setInterval(() => {   
-            //     changeTargetPos(-1, 0);
-            // }, 130);
+    
             rotatePlayer("left");
             break;
         case 38:
@@ -258,12 +242,7 @@ function handleKeyDown(e, fake){
             }
             targetPos.x = closestBox(player.position.x);
             currentDirection = "up";
-            //player.position.x = targetPos.x;
-            // clearLastKeys();
-            //changeTargetPos(0, -1);
-            // moveInterval = setInterval(() => {   
-            //     changeTargetPos(0, -1);
-            // }, 130);
+ 
             rotatePlayer("up");
             break;
         case 39:
@@ -272,12 +251,7 @@ function handleKeyDown(e, fake){
             }
             targetPos.y = closestBox(player.position.y);
             currentDirection = "right";
-            //player.position.y = targetPos.y;
-            // clearLastKeys();
-            //changeTargetPos(1, 0);
-            // moveInterval = setInterval(() => {   
-            //     changeTargetPos(1, 0);
-            // }, 130);
+
             rotatePlayer("right");
             break;
         case 40:
@@ -286,29 +260,18 @@ function handleKeyDown(e, fake){
             }
             targetPos.x = closestBox(player.position.x);
             currentDirection = "down";
-            //player.position.x = targetPos.x;
-            // clearLastKeys();
-            //changeTargetPos(0, 1);
-            // moveInterval = setInterval(() => {   
-            //     changeTargetPos(0, 1);
-            // }, 130);
+    
             rotatePlayer("down");
             break;
         case 82:
             restartGame();
             break;
-        // case 80:
-        //     var dataUrl = cvs.toDataURL();
-        //     console.log(dataUrl);
-        // case 86:
-        //     score = 19;
-        //     break;
+
     }
 
 }
 
 function shootSpecialBulletBiDirectional(food){
-    //console.log("new bullets special");
     var secondBulletAngle;
     switch(player.angle){
         case 0:
@@ -335,7 +298,6 @@ function shootSpecialBulletBiDirectional(food){
     }
 
     function shootSpecialBulletAllDirections(food){
-        //console.log("new bullets special");
         var bul1 = new bullet(food.position.x + player.width/2 - 6, 
             food.position.y + player.height/2 - 6, 0, player.shootingSpeed, 12, 12);
         var bul2 = new bullet(food.position.x + player.width/2 - 6, 
@@ -348,9 +310,6 @@ function shootSpecialBulletBiDirectional(food){
 
 function changeTargetPos(x, y) {  
 
-    // console.log(currentDirection);
-    // console.log(player.position.y, targetPos.y);
-    // console.log(x, y);
     switch(currentDirection){
         case "up": 
         if(player.position.y == targetPos.y)
@@ -369,16 +328,6 @@ function changeTargetPos(x, y) {
     targetPos.x = targetPos.x + x * (player.width);   
         break;
     }
-    //console.log("movendo player");
-    // if(Math.abs(targetPos.x - player.position.x) < player.width){
-    //     console.log("vai mover pra esquerda ou direita")
-    //     targetPos.x = targetPos.x + x * player.width;
-    // }
-    // if(Math.abs(targetPos.y - player.position.y) < player.height){
-    //     targetPos.y= targetPos.y + y * player.height;
-    // }
-    //player.position.x += x * player.width;
-    //player.position.y += y * player.width;
  
 }
 
@@ -417,26 +366,22 @@ function movePlayer(){
     if(player.position.x >= boxSize){
         player.position.x = -player.width;
         targetPos.x = player.position.x + player.width;
-       // handleKeyDown({keyCode: 39}, true);
     }
 
     else if(player.position.x <= -player.width){
         player.position.x = boxSize;
         targetPos.x = player.position.x - player.width;
-        //handleKeyDown({keyCode: 37}, true);
     }
 
     else if(player.position.y >= boxSize){
         player.position.y = 0;
         targetPos.y = player.position.y;
-        //handleKeyDown({keyCode: 40}, true);
 
     }
 
     else if(player.position.y <= -player.height){
         player.position.y = boxSize;
         targetPos.y = player.position.y - player.height;
-        //handleKeyDown({keyCode: 38}, true);
 
     }
 
@@ -516,7 +461,6 @@ class bullet {
         if(gameIsOver | won)
         return;
 
-        //spawnParticles(2, this.position.x, this.position.y, this.color, 0.15);
         this.position.x += dirToGo.x * this.speed;
         this.position.y += dirToGo.y * this.speed;
     }
@@ -532,7 +476,6 @@ class bullet {
             }
 
             this.position.x = 0;
-            //this.canReturn = false;
         }
 
         else if(this.position.x < 0){
@@ -541,7 +484,6 @@ class bullet {
                 return;
             }
             this.position.x = boxSize;
-            //this.canReturn = false;
         }
 
         else if(this.position.y > boxSize){
@@ -550,7 +492,6 @@ class bullet {
                 return;
             }
             this.position.y = 0;
-            //this.canReturn = false;
         }
 
         else if(this.position.y < 0){
@@ -559,7 +500,6 @@ class bullet {
                 return;
             }
             this.position.y = boxSize;
-            //this.canReturn = false;
         }
         
 
@@ -591,7 +531,6 @@ var bullets = [];
 
 var updateId, delta = 16,
     previousDelta = 0
-    //fpsLimit = 6000;
 
 
 function update(currentDelta){
@@ -600,18 +539,13 @@ function update(currentDelta){
     
         
         delta = currentDelta - previousDelta;
-        // console.log(delta);
-        // if (fpsLimit && delta < 1000 / fpsLimit) {
-        //     return;
-        // }
+
         
     if(won)
     return;
-//if(gameIsOver){
         
    updateParticles();
    
-//}
 bullets.forEach(b => {
     b.moveMe();
     b.handleMyBorderCollision();
@@ -664,27 +598,7 @@ ctx.fillStyle = "rgb(20,20,20)";
 ctx.fillRect(0,0,boxSize,boxSize);
 
 
-
-//draw player painted boxes
-//var colorToFillPlayerPaintedBoxes = "rgba(60, 130, 200, " + (0.15 / distanceToPlayer ) + ")";
-
-            // if(!gameIsOver){
-            // ctx.strokeStyle = "rgba(20, 30, 55, 1)";
-            // ctx.strokeWidth = 2;
-
-
-            // //vertical
-            // if(player.angle == 0 || player.angle == Math.PI)
-            // ctx.strokeRect(player.position.x,0,player.width, boxSize); 
-
-            // //horizontal
-            // else
-            // ctx.strokeRect(0,player.position.y,boxSize, player.height); 
-            // }
-
-
 //draw painted boxes
-//console.log("paintedboxesarray length: " + paintedBoxesArray.length);
 paintedBoxesArray.forEach(pb => {
 
     ctx.fillStyle = pb.color;
@@ -729,22 +643,13 @@ ctx.strokeStyle = "white";
 ctx.strokeWidth = currentFood.strokeThickness;
 ctx.fillStyle = currentFood.color;
 ctx.drawImage(foodImages[currentFood.foodType], currentFood.position.x, currentFood.position.y);
-//////////////////////////////ctx.fillRect(currentFood.position.x, currentFood.position.y, currentFood.width, currentFood.height);
-//ctx.strokeRect(currentFood.position.x, currentFood.position.y, currentFood.width, currentFood.height);
-//ctx.beginPath();
-// ctx.arc(currentFood.position.x, currentFood.position.y, currentFood.radius, 0, 2 * Math.PI);
-// ctx.closePath();
-// ctx.fill();
+
 
 if(!gameIsOver){
-//draw player
 ctx.save(); // save current state
-//ctx.rotate(player.angle); // rotate
-//ctx.drawImage(playerImg, player.position.x, player.position.y, player.width, player.height);
+//ctImage(playerImg, player.position.x, player.position.y, player.width, player.height);
 ctx.fillStyle = /*player.color;*/ "white";
-//ctx.fillRect(player.position.x, player.position.y, player.width, player.height);
-
-//com sprite certo!
+//ctx.filte certo!
 ctx.drawImage(charImage, charSprite().sx, charSprite().sy, 14, 14, /*aqui as coords de cada sprite no atlas da image */
     player.position.x, player.position.y, player.width, player.height /* aqui as coords de desenhar no canvas*/)
 ctx.restore(); // restore original states (no rotation etc)
@@ -756,16 +661,13 @@ drawParticles();
 
 
 
-//draw bullets
 
 bullets.forEach(b => {
     ctx.save(); 
     ctx.fillStyle = b.color;
 
     
-    //ctx.rotate(b.angle); // rotate
     ctx.drawImage(bulletImage, b.position.x, b.position.y);
-    // ctx.fillRect(b.position.x, b.position.y, b.width, b.height);
     ctx.restore(); 
 });
 
@@ -793,7 +695,6 @@ function boxesCollide(rect1, rect2){
 
 function setup(){
     resizeStuff();
-    //ctx.scale(multiplyFactor, multiplyFactor);
     spawnFood();
     
 }
@@ -808,7 +709,6 @@ function youWon(){
     awardScreen.classList.remove("invisible");
 }
 
-//document.getElementById("award-screen").classList.add("invisible");
 function startEverything(){
     loadingScreen.classList.add("invisible");
 
@@ -819,7 +719,6 @@ function startEverything(){
 function startGame(){
     
     document.getElementById("content").classList.remove("invisible");
-    //ctx.scale(multiplyFactor,multiplyFactor);
     setup();
     playSfx(replaySound, 1);
     startPlayingMusic();
@@ -832,7 +731,7 @@ function startGame(){
 
 function charSprite(){
         if (player.position.x > currentFood.position.x){
-    //olhar pra esquerda
+                //olhar pra esquerda
             if(player.position.y > currentFood.position.y){
                 //olhar pra cima e pra esquerda
                 sx = 28;
@@ -850,7 +749,7 @@ function charSprite(){
         }
 
             else{
-        //olhar pra direita
+                //olhar pra direita
             if(player.position.y > currentFood.position.y){
                 //olhar pra cima e pra direita
                 sx = 42;

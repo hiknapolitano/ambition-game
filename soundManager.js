@@ -1,7 +1,5 @@
 
 
-//var deathSound = new Audio("./sounds/death.ogg");
-//var food0Sound = new Audio("./sounds/food0.ogg");
 var canStartAudio = true;
 var musicFilesArray = [];
 var score = 0;
@@ -14,7 +12,6 @@ var replaySound =   new Audio("./sounds/sfx--07.ogg");
 var wonSound =  new Audio("./sounds/sfx--09.ogg");
 
 var srcNodes = [];
-//var music = new Audio("./sounds/music.mp3");
 
 
 function playSound(sound, volume){
