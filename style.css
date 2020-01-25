@@ -1,0 +1,288 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+
+    /* font-family:  'Courier New', Courier, monospace; */
+    padding: 0;
+    margin: 0;
+    }
+    
+    canvas {
+
+    background-color: black;
+    display: block;
+    padding: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+}
+   
+.leaderboard{
+    font-size: 3.4vh;
+    margin-top: 60%;
+    color: rgb(91, 110, 225);
+}
+
+
+body{
+    background-color: rgba(0, 0, 0);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    /* background-image: url(./images/bg.jpg); */
+}
+
+
+ .scoreText {
+    padding: 0;
+    position: relative;
+    top: 10%;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    font-size: 4vh;
+    color: rgb(233, 233, 233);
+    margin: auto;
+    text-align: center;
+
+}
+.gameOverScreen{
+    width: 560px;
+    height: 560px;
+    background-color: rgb(0, 0, 0);
+    display: block;
+    padding: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    color: rgb(115, 226, 124);
+    font-weight: 600;
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+.gameOverScreen p, h1, h3{
+    display: block;
+    text-align: center;
+    top: 10%;
+
+   
+}
+
+.gameOverScreen img{
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gameOverScreen h1{
+    color: rgb(243, 243, 243);
+    font-size: 6.5vh;
+
+
+}
+
+.goal{
+    font-size: 2.3vh;
+    color: whitesmoke;
+}
+
+
+.divisionBox{
+    height: 35%;
+    width: 100%;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+}
+.divisionBox p{
+    font-size: 2.4vh;
+}
+
+.content{
+    display: block;
+    height:  100%;
+}
+
+.visible{
+    opacity: 1;
+    visibility: visible;
+  -webkit-transition: opacity 300ms ease-in, visibility 300ms;
+  transition: opacity 300ms ease-in, visibility 300ms;
+  transition-delay: 800ms;
+}
+
+.loadingText{
+    
+    color: rgb(168, 168, 168);
+    display: block;
+    padding: 0;
+    margin: auto;
+    position: absolute;
+    top: 65%;
+    bottom: 0;
+    left: 50%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8vh;
+    text-align: center;
+    transform: translateX(-50%);
+    right: 0;
+
+}
+
+
+.starter{
+
+    width: 560px;
+    height: 560px;
+    background-color: rgb(0, 0, 0);
+    display: block;
+    padding: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    
+}
+
+.starter button{
+    color: rgb(188, 209, 0);
+    width: 100%;
+    height: 100%;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+
+
+.award-screen{
+    width: 560px;
+    height: 560px;
+    background-color: rgb(0, 0, 0);
+    display: block;
+    padding: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    color: rgb(164, 209, 0);
+
+
+}
+
+
+
+.award-screen h1{
+    margin-top: 10%;
+    color: rgb(219, 219, 219);
+    font-size: 6.5vh;
+}
+
+.award-screen p{
+    display: block;
+    text-align: center;
+    top: 50%;
+    font-size: 3vh;
+}
+
+.congrats{
+
+    height: 40%;
+    width: 100%;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+
+}
+.award-screen img{
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+}
+
+.invisible{
+    visibility: hidden;
+}
+.trademark{
+    color: whitesmoke;
+    position: absolute;
+    width: 100%;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.loading{
+
+    width: 560px;
+    height: 560px;
+    background-color: rgb(0, 0, 0);
+    display: block;
+    padding: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    color: rgb(202, 226, 115);
+
+}
+
+.loading img{
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 10%;
+    height: 10%;
+}
+
+.trademark h3, a{
+    color: whitesmoke;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.6vh;
+    line-height: 2vh;
+    font-weight: 200;
+}
+
+a{
+    text-decoration: none;
+    color: cornflowerblue;
+}

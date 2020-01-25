@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ambition</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onresize="resizeStuff()">
+
+<div class="loading" id="loading">
+
+<img src="./images/svg/loading.svg" alt="loading game">
+<p class="loadingText">Loading game...</p>
+
+</div>
+
+<div class="starter invisible" id="starter">
+    <button onclick="startGame()">Use arrow keys to move. Click here to start!</button>
+</div>
+
+    <div class="content invisible" id="content" style="height: 100%;">
+
+        <canvas id="cvs"></canvas>
+        <div class="gameOverScreen" id="game-over-screen">
+            <div class="divisionBox">
+
+                <h1>Game Over</h1>
+                <p>Press "R" on your keyboard to play again.</p>
+                
+            </div>
+            <img src="./images/sad.png" alt="sad face">
+
+            <div class="leaderboard">
+                
+                <p id="score-final"></p>
+                <p id="high-score-final"></p>
+                <br>
+                <p class="goal">reach 20 to beat the game!</p>
+                    
+                    </div>
+
+        <div class="trademark">
+                <h3>Thank you for playing! This game was developed by Napolitronics.
+                    <p>Check me out at <a href="https://www.facebook.com/napolitronics/">my facebook page</a>.</p>
+                </h3>
+            </div>
+        </div>
+
+        <div class="award-screen invisible"  id="award-screen">
+            
+            <h1>wow.</h1>
+            <div class="congrats">
+                <p>I'm impressed!</p>
+                <p>You are a true legend! You <i>beat</i> the game!</p>
+            </div>
+
+            <img src="./images/award.png" alt="the trophy you deserve">
+                
+
+            <div class="trademark">
+                <h3>Thank you for playing! This game was developed by Napolitronics.
+                    <h3>Check me out at <a href="https://www.facebook.com/napolitronics/">my facebook page</a>.</h3>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./particles.js"></script>
+    <script src="./soundManager.js"></script>
+    <script src="./app.js"></script>
+
+
+
+</body>
+</html>
+
