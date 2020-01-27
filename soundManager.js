@@ -31,7 +31,7 @@ function updateSoundsVolume(){
         for (let i = 0; i < gainNodesArray.length; i++) {
         gainNodesArray[i].node.gain.setValueAtTime(0, actx.currentTime);
         }
-        gainNodesArray[gainNodesArray.length-1].node.gain.setValueAtTime(0.33, actx.currentTime);
+        gainNodesArray[gainNodesArray.length-1].node.gain.setValueAtTime(0.45, actx.currentTime);
 
         return;
     }
@@ -40,7 +40,7 @@ for (let i = 0; i < gainNodesArray.length; i++) {
     if(gainNodesArray[i].index>score+1)
    gainNodesArray[i].node.gain.setValueAtTime(0, actx.currentTime);
     else
-   gainNodesArray[i].node.gain.setValueAtTime(0.3, actx.currentTime);
+   gainNodesArray[i].node.gain.setValueAtTime(0.45, actx.currentTime);
 
 }
 
@@ -87,7 +87,7 @@ function loadSounds(e){
         if(i>0)
             gainNode.gain.setValueAtTime(0, actx.currentTime)
         else
-            gainNode.gain.setValueAtTime(0.3, actx.currentTime)
+            gainNode.gain.setValueAtTime(0.45, actx.currentTime)
 
         srcNode.buffer = abuffer;             // use decoded buffer
         gainNode.connect(actx.destination);    // create output
